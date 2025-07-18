@@ -1,107 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Giới thiệu bản thân</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌸 Giới thiệu bản thân - Phong cách Anime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      background: url('https://your-anime-background-url.jpg') no-repeat center center/cover;
-      height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      color: white;
+      font-family: 'Handlee', cursive;
+      background: linear-gradient(to bottom, #ffe6f0, #f0f8ff);
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      max-width: 350px;
       position: relative;
     }
 
-    .profile {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 30px;
-      border-radius: 20px;
-      backdrop-filter: blur(5px);
-      z-index: 2;
-    }
-
-    .avatar {
+    .card img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 3px solid white;
-      margin-bottom: 15px;
+      object-fit: cover;
+      border: 4px solid #ffc0cb;
     }
 
-    .name {
+    .card h1 {
       font-size: 24px;
-      font-weight: bold;
+      margin: 15px 0 5px;
+      color: #ff69b4;
     }
 
-    .intro {
+    .card p {
+      color: #444;
       font-size: 16px;
-      margin-top: 8px;
       margin-bottom: 20px;
-      color: #ccc;
     }
 
-    .social-icons a {
-      color: white;
-      margin: 0 10px;
-      font-size: 20px;
-      text-decoration: none;
-      transition: color 0.3s;
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
     }
 
-    .social-icons a:hover {
-      color: #00ffff;
+    .social a {
+      color: #ff69b4;
+      font-size: 22px;
+      transition: transform 0.3s;
     }
 
-    /* Hiệu ứng lá rơi */
-    .leaf {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      background-image: url('https://i.ibb.co/X2JRCM6/leaf.png');
-      background-size: cover;
-      pointer-events: none;
-      opacity: 0.8;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 1;
-      }
+    .social a:hover {
+      transform: scale(1.2);
     }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <div class="profile">
-    <img class="avatar" src="https://your-avatar-url.jpg" alt="Avatar">
-    <div class="name">Vương Thanh Diệu</div>
-    <div class="intro">I am in the Milky Way and I REMEMBER</div>
-    <div class="social-icons">
-      <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
-      <a href="https://t.me/yourtelegram" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a>
-      <a href="#"><i class="fas fa-heart"></i> REMEMBER</a>
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/aa/4c/f7/aa4cf7d88b9c8cead29b5b7d64b86a96.jpg" alt="Avatar Anime">
+    <h1>Yui Sakura 🌸</h1>
+    <p>Lập trình viên Front-end ✨<br>Fan cứng của Anime & Ghibli 🍃</p>
+
+    <div class="social">
+      <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
     </div>
   </div>
 
-  <!-- Script tạo lá rơi -->
-  <script>
-    function createLeaf() {
-      const leaf
+</body>
+</html>
