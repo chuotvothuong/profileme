@@ -3,153 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Giới thiệu bản thân Anime</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <title>Robot Anime World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #222;
     }
 
-    body {
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      backdrop-filter: brightness(0.6) blur(2px);
-      height: 100vh;
+    header {
+      background-color: #ffffffcc;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #006064;
+      margin: 0;
+    }
+
+    .hero {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      overflow: hidden;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero img {
+      max-width: 400px;
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      color: #555;
+    }
+
+    .robot-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 500px;
+      background: #ffffffdd;
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 300px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
-      color: white;
-      animation: fadeIn 2s ease-in-out;
+      transition: transform 0.3s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card:hover {
+      transform: translateY(-8px);
     }
 
-    .avatar {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #a066ff;
-      box-shadow: 0 0 20px #a066ff;
-      margin-bottom: 20px;
-      animation: float 4s ease-in-out infinite;
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #004d40;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #fff;
-      animation: glow 2s ease-in-out infinite alternate;
+    footer {
+      background-color: #e0f2f1;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
     }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #a066ff; }
-      to { text-shadow: 0 0 20px #a066ff, 0 0 30px #fff; }
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      font-weight: 300;
-      color: #dcdcdc;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #eee;
-    }
-
-    .socials {
-      margin-top: 20px;
-    }
-
-    .socials a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #a066ff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .socials a:hover {
-      color: #fff;
-    }
-
-    /* Audio button style (optional) */
-    #audio-controls {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      color: white;
-      font-size: 14px;
-    }
-
   </style>
 </head>
 <body>
 
-  <!-- Thẻ audio phát nhạc nền -->
-  <audio id="bg-music" autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ phát nhạc.
-  </audio>
+  <header>
+    <h1>Robot Anime World</h1>
+  </header>
 
-  <div class="card">
-    <img src="avatar.jpg" alt="Avatar Anime" class="avatar">
-    <h1>Xin chào! Mình là Minh</h1>
-    <h2>Yêu thích Anime 🎌 | Lập trình viên Web 💻</h2>
-    <p>
-      Mình là một người đam mê anime và công nghệ.<br>
-      Thích sáng tạo, học hỏi và chia sẻ những điều thú vị trong cuộc sống.<br>
-      Một số anime yêu thích: Your Name, Demon Slayer, Violet Evergarden 💖
-    </p>
-    <div class="socials">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">GitHub</a>
+  <section class="hero">
+    <img src="https://i.imgur.com/1U7CkyY.png" alt="Mecha Robot">
+    <h2>Khám phá thế giới robot anime!</h2>
+    <p>Chào mừng bạn đến với thế giới nơi công nghệ, cảm xúc và những trận chiến robot hoành tráng hòa quyện vào nhau. Đây là nơi của Gundam, Eva, và nhiều hơn nữa!</p>
+  </section>
+
+  <section class="robot-cards">
+    <div class="card">
+      <img src="https://i.imgur.com/XTQyLMe.png" alt="Gundam">
+      <h3>RX-78 Gundam</h3>
+      <p>Biểu tượng bất diệt của dòng anime mecha từ Mobile Suit Gundam.</p>
     </div>
-  </div>
+    <div class="card">
+      <img src="https://i.imgur.com/kUpUuAE.png" alt="Eva Unit 01">
+      <h3>Eva Unit 01</h3>
+      <p>Chiếc mecha mang tính biểu tượng từ Evangelion - nửa người, nửa máy.</p>
+    </div>
+    <div class="card">
+      <img src="https://i.imgur.com/yXRyWmh.png" alt="Code Geass">
+      <h3>Lancelot Albion</h3>
+      <p>Robot siêu cấp từ Code Geass với tốc độ và sức mạnh vượt trội.</p>
+    </div>
+  </section>
 
-  <!-- Tùy chọn thêm nút bật/tắt nhạc -->
-  <div id="audio-controls">
-    <button onclick="toggleMusic()">🔊 Tắt/Bật nhạc</button>
-  </div>
-
-  <script>
-    const audio = document.getElementById('bg-music');
-
-    function toggleMusic() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
-  </script>
+  <footer>
+    © 2025 Robot Anime World. Tất cả bản quyền thuộc về các tác giả gốc.
+  </footer>
 
 </body>
 </html>
