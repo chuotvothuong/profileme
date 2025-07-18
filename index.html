@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giới thiệu bản thân Anime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.6) blur(2px);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      color: white;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #a066ff;
+      box-shadow: 0 0 20px #a066ff;
+      margin-bottom: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #fff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #a066ff; }
+      to { text-shadow: 0 0 20px #a066ff, 0 0 30px #fff; }
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 300;
+      color: #dcdcdc;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #a066ff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    /* Audio button style (optional) */
+    #audio-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Thẻ audio phát nhạc nền -->
+  <audio id="bg-music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
+  <div class="card">
+    <img src="avatar.jpg" alt="Avatar Anime" class="avatar">
+    <h1>Xin chào! Mình là Minh</h1>
+    <h2>Yêu thích Anime 🎌 | Lập trình viên Web 💻</h2>
+    <p>
+      Mình là một người đam mê anime và công nghệ.<br>
+      Thích sáng tạo, học hỏi và chia sẻ những điều thú vị trong cuộc sống.<br>
+      Một số anime yêu thích: Your Name, Demon Slayer, Violet Evergarden 💖
+    </p>
+    <div class="socials">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Tùy chọn thêm nút bật/tắt nhạc -->
+  <div id="audio-controls">
+    <button onclick="toggleMusic()">🔊 Tắt/Bật nhạc</button>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
