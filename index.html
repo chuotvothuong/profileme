@@ -15,8 +15,36 @@
     <meta property="og:url" content="//thanhdieu.com">
     <meta property="og:image" content="./public/src/t/img/avatar.jpg">
     <meta name="theme-color" content="#00FFFF">
+    <style>
+      /* CSS avatar + khung */
+      .avatar-frame {
+          position: relative;
+          width: 300px;   /* Kích thước khung */
+          height: 300px;
+          margin: auto;   /* Căn giữa */
+      }
+      .avatar-img {
+          position: absolute;
+          top: 40px;       /* Canh dọc */
+          left: 40px;      /* Canh ngang */
+          width: 220px;    /* Kích thước avatar */
+          height: 220px;
+          border-radius: 50%;
+          object-fit: cover;
+          z-index: 1;      /* Dưới khung */
+      }
+      .frame-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;      /* Trên avatar */
+          pointer-events: none;
+      }
+    </style>
   </head>
-   <div id="particles-js"></div>
+  <div id="particles-js"></div>
   <section class="animated-background">
     <div id="stars1"></div>
     <div id="stars2"></div>
@@ -26,167 +54,80 @@
     <div class="LoaderCover">
       <div class="Loader">
         <div class="lds-ripple"><div></div><div></div></div>
-      <br/>
-        <br/>
-          <br/>
-            <br/>
-              <br/>
-                <br/>
-                <br/>  
-              <br/>
-            <br/>
-          <br/>
-        <br/>
-      <br/>
-      <h2 class="NameFtJerry">☻Loading...</h2>
-        </div>
+        <h2 class="NameFtJerry">☻Loading...</h2>
       </div>
+    </div>
     <!-- ===== Navigation Bar ===== -->
     <div class="BlurWebs">
       <div class="Topnav">
         <a class="Active">HOME</a>
-          <a><font color="red"><span id="fps">60.0</span> FPS </font></a>
+        <a><font color="red"><span id="fps">60.0</span> FPS </font></a>
       </div>
       <br/>
       <p align="center">
-<div class="avatar">
-    <img id="avatar-img" class="avatar-img" alt="Jerry Eban">
-    <img class="crown" src="./public/src/t/img/mong-vuot-rong.png">
-    <!-- <img class="crown2" src="./public/src/t/img/vip-crown.png"> -->
-</div>
-
-<script>
-    // Đường dẫn ảnh avatar (thay link của bạn vào đây)
-    const avatarUrl = "https://i.imgur.com/FZ2FN4C.jpeg";
-
-    // Thêm số ngẫu nhiên chống cache
-    const randomNumber = Math.floor(Math.random() * 999) + 1;
-    document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
-</script>
-    </p>
+        <!-- Avatar + Khung VIP -->
+        <div class="avatar-frame">
+            <img id="avatar-img" class="avatar-img" alt="Avatar">
+            <img class="frame-img" src="./public/src/t/img/frame.png" alt="Khung VIP">
+        </div>
+      </p>
       <h2 class="NameFtJerry">
         <div id="userName">Jerry Eban&nbsp;<img class="verify" src="./public/src/t/img/verify.png"/></div>
-    </div>
       </h2>
       <h2 class="TieuSu GioiThieu">Hi my name is Jerry<span class="typed-cursor" aria-hidden="true"></span></h2>
       <br/>
-      <strong style="color: rgb(255, 238, 0); font-size: 16px; font-family: 'Rowdies';">You Info: <a id="geoip">Loading your address....</a>
-        <br/>
-      </strong>
-      </strong>
+      <strong style="color: rgb(255, 238, 0); font-size: 16px; font-family: 'Rowdies';">You Info: <a id="geoip">Loading your address....</a></strong>
       <a id="geoinfo"></a>
-      <br/>
-      <br/>
+      <br/><br/>
       <hr class="New">
       <br/>
       <ul class="icons">
-        <br/>
         <div class="MangXaHoiFtJerry">
-          <u class="NameFtJerry">- Social Network -</u><br/>
-          <br/>
-          <a id="Facebook">
-            <div class="Facebook">
-              <i class="bi bi-facebook">&nbsp; </i>Facebook (1K+)
-            </div>
-          </a>
-          <br/>
-          <a id="TikTok">
-            <div class="TikTok">
-              <i class="bi bi-tiktok">&nbsp; </i>TikTok (1K+)
-            </div>
-          </a>
-          <br/>
-          <a id="Discord">
-            <div class="Discord">
-              <i class='bi bi-discord'>&nbsp; </i>Discord (0K)
-            </div>
-          </a>
-          <br/>
-          <a id="Instagram">
-            <div class="Instagram">
-              <i class="bi bi-instagram">&nbsp; </i>Instagram (0K)
-            </div>
-          </a>
-          <br/>
+          <u class="NameFtJerry">- Social Network -</u><br/><br/>
+          <a id="Facebook"><div class="Facebook"><i class="bi bi-facebook">&nbsp; </i>Facebook (1K+)</div></a><br/>
+          <a id="TikTok"><div class="TikTok"><i class="bi bi-tiktok">&nbsp; </i>TikTok (1K+)</div></a><br/>
+          <a id="Discord"><div class="Discord"><i class='bi bi-discord'>&nbsp; </i>Discord (0K)</div></a><br/>
+          <a id="Instagram"><div class="Instagram"><i class="bi bi-instagram">&nbsp; </i>Instagram (0K)</div></a><br/>
         </div>
-        <br/>
-        <br/>
-        <hr class="New">
-        <br/>
-        <br/>
+      </ul>
+      <hr class="New">
     </div>
     <section id="skills">
-      <div class="NameFtJerry" class="container skills">
+      <div class="NameFtJerry container skills">
         <div class="row">
           <Skills class="col-12">
-            <u class="NameFtJerry">- Skill Language -<br/>
-            </u>
+            <u class="NameFtJerry">- Skill Language -<br/></u>
         </div>
       </div>
       <div class="col-lg-6 col-12">
         <div class="skill-box">
-          <div class="skill">
-            <div class="skill-name">HTML/CSS</div>
-            <div class="skill-bar">
-              <div class="skill-per color1" per="76"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-name">MySql</div>
-            <div class="skill-bar">
-              <div class="skill-per color3" per="9"></div>
-            </div>
-          </div>
+          <div class="skill"><div class="skill-name">HTML/CSS</div><div class="skill-bar"><div class="skill-per color1" per="76"></div></div></div>
+          <div class="skill"><div class="skill-name">MySql</div><div class="skill-bar"><div class="skill-per color3" per="9"></div></div></div>
         </div>
       </div>
       <div class="col-lg-6 col-12">
         <div class="skill-box">
-          <div class="skill">
-            <div class="skill-name">Lua</div>
-            <div class="skill-bar">
-              <div class="skill-per color1" per="68"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-name">PHP</div>
-            <div class="skill-bar">
-              <div class="skill-per color2" per="12"></div>
-            </div>
-          </div>
+          <div class="skill"><div class="skill-name">Lua</div><div class="skill-bar"><div class="skill-per color1" per="68"></div></div></div>
+          <div class="skill"><div class="skill-name">PHP</div><div class="skill-bar"><div class="skill-per color2" per="12"></div></div></div>
         </div>
     </section>
-    <br/>
-    <br/>
-    <br/>
-    <hr class="New">
-    <br/><br/><u class="NameFtThanhDieu">- About Me -</u><br/><br/>
-<div class="AboutMe">
-    <article>
-      <p id="ThanhDieuAbout_1" class="BoxAboutMe">Nothing</p><br/>
-      <p id="ThanhDieuAbout_2" class="BoxAboutMe">
-        Subscribe to our official Telegram channel to report any bugs related to this website.
-      <a style="color: #6272ff;" href="//t.me/ThanhDieuChannel" >click here </a>to contact me.</p></a>
-     </div>
-     </article>
-  </div>
-  <br/>
-  <br/>
-  <hr class="New">
-  <footer class="Cuoi Trang">
-    <p class="JerryFtCopyright">
-      <span style="font-family: Monomaniac One;" class="copyright">
-        Created by <a href="https://facebook.com/chuotxyzabc" style="text-decoration: none;">
-          <u style="color: aliceblue;">Jerry ♡</u>
-        </a><br>
-        <strong>All rights reserved - © 2025</strong>
-      </span>
-    </p>
-  </footer>    
+    <br/><hr class="New">
+    <u class="NameFtThanhDieu">- About Me -</u><br/><br/>
+    <div class="AboutMe">
+      <article>
+        <p id="ThanhDieuAbout_1" class="BoxAboutMe">Nothing</p><br/>
+        <p id="ThanhDieuAbout_2" class="BoxAboutMe">Subscribe to our official Telegram channel to report any bugs related to this website. <a style="color: #6272ff;" href="//t.me/ThanhDieuChannel">click here</a> to contact me.</p>
+      </article>
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
+    <br/><hr class="New">
+    <footer class="Cuoi Trang">
+      <p class="JerryFtCopyright">
+        <span style="font-family: Monomaniac One;" class="copyright">
+          Created by <a href="https://facebook.com/chuotxyzabc" style="text-decoration: none;"><u style="color: aliceblue;">Jerry ♡</u></a><br>
+          <strong>All rights reserved - © 2025</strong>
+        </span>
+      </p>
+    </footer>
     <div id="Toast">𝘿𝙚𝙨𝙞𝙜𝙣𝙚𝙧 𝙗𝙮 𝙅𝙚𝙧𝙧𝙮 𝙀𝙗𝙖𝙣</div>
     <!-- LIBRARY -->
     <script src="./public/src/t/libs/typed.js@2.0.12/typed.js"></script>
@@ -196,16 +137,11 @@
     <script src="./public/src/t/js/particles.js"></script>
     <script src="./public/src/t/js/app.js"></script>
     <script src="./public/src/t/js/index.js"></script>
+    <script>
+      // JS avatar
+      const avatarUrl = "./public/src/t/img/avatar.jpg";
+      const randomNumber = Math.floor(Math.random() * 999) + 1;
+      document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
+    </script>
   </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
