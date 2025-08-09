@@ -7,7 +7,7 @@ $(function(){
     ShowToast();
     __GetIP();
     __GetInfo();
-    console.log("%c🌳 Name：ThanhDieuTv | Bio：Sayy Hello | Url：https://www.thanhdieu.com 🌳", "font-family: ;color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+    console.log("%c🌳 Name：Jerry | Bio：Sayy Hello | Url：https://www.thanhdieu.com 🌳", "font-family: ;color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
     console.log("…………./´¯/)……….. (\\¯’\\\n…………/….//……….. …\\\\….\\\n………../….//………… ….\\\\….\\\n…../´¯/…./´¯\\\\………../¯‘\\\\…./¯’\\\\\n.././…/…./…./.|_|……_| .\\\\…\\\\…\\\\…\\\\.\\\\\n(.(….(….(…./.)..)..(..(. \\\\….)….)….).)\n.\\\\…………….\\/…/…\\\\. ..\\/……………./\n..\\\\…………….. /……..\\\\………………../\n…\\\\…………..(………. ..)……………./");
   });
 // CHECK FPS
@@ -68,26 +68,26 @@ function ShowToast() {
     }
     // SET URL FACEBOOK
     $('#Facebook').click(function() {
-        OpenUrl('https://www.facebook.com/100035052735014');
+        OpenUrl('https://www.facebook.com/chuotxyzabc');
     });
-      // SET URL YOUTUBE
-    $('#Youtube').click(function() {
-        OpenUrl('https://www.youtube.com/channel/UCiSP9FWliPIwG-w59dJdilQ');
+      // SET URL TikTok
+    $('#TikTok').click(function() {
+        OpenUrl('https://www.tiktok.com/chuotarm2010');
     });
     // SET URL DISCORDS
     $('#Discord').click(function() {
-        OpenUrl('https://dsc.bio/WusThanhDieu');
+        OpenUrl('https://');
     });
       // SET URL INSTAGRAM
     $('#Instagram').click(function() {
-        OpenUrl('https://instagram.com/vuongsondieu2k2/');
+        OpenUrl('https://');
     });
   });
   
 function Alerts() {
   Swal.fire({
     title: '𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 !',
-    text: '=>> 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙃𝙪𝙣𝙣𝙞𝙚 𝙗𝙖𝙘𝙠 𝙩𝙤 𝙩𝙝𝙚 𝙝𝙤𝙢𝙚𝙥𝙖𝙜𝙚 🐬 <<=',
+    text: '=>> 𝘾𝙝𝙖̀𝙤 𝙈𝙪̛̀𝙣𝙜 Đ𝙚̂́𝙣 𝙑𝙤̛́𝙞 𝙏𝙧𝙖𝙣𝙜 𝙒𝙚𝙙 𝘾𝙪̉𝙖 𝘾𝙝𝙪𝙤̣̂𝙩 💘 <<=',
     showConfirmButton: false
   });
 }
@@ -413,3 +413,4 @@ function __GetInfo() {
     setTimeout(geoinfo, 5000);
 
 }
+
