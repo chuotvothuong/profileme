@@ -49,9 +49,20 @@
       </div>
       <br/>
       <p align="center">
-  <div class="avatar-img" src="./public/src/t/img/avatar.jpg" alt="Jerry">
-<img class="crown" src="./public/src/t/img/mong-vuot-rong.png" alt="Crown">
-  </div>
+<div class="avatar">
+    <img id="avatar-img" class="avatar-img" alt="Jerry Eban">
+    <img class="crown" src="./public/src/t/img/mong-vuot-rong.png">
+    <!-- <img class="crown2" src="./public/src/t/img/vip-crown.png"> -->
+</div>
+
+<script>
+    // Đường dẫn ảnh avatar (thay link của bạn vào đây)
+    const avatarUrl = "https://i.imgur.com/FZ2FN4C.jpeg";
+
+    // Thêm số ngẫu nhiên chống cache
+    const randomNumber = Math.floor(Math.random() * 999) + 1;
+    document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
+</script>
     </p>
       <h2 class="NameFtJerry">
         <div id="userName">Jerry Eban&nbsp;<img class="verify" src="./public/src/t/img/verify.png"/></div>
@@ -188,6 +199,7 @@
   </body>
 
 </html>
+
 
 
 
