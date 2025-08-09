@@ -72,7 +72,7 @@ function ShowToast() {
     });
       // SET URL TikTok
     $('#TikTok').click(function() {
-        OpenUrl('https://www.tiktok.com/chuotarm2010');
+        OpenUrl('https://www.tiktok.com/@chuotarm2010');
     });
     // SET URL DISCORDS
     $('#Discord').click(function() {
@@ -413,4 +413,5 @@ function __GetInfo() {
     setTimeout(geoinfo, 5000);
 
 }
+
 
