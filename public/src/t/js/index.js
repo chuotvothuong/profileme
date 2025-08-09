@@ -36,6 +36,7 @@ const MusicList=[
     "//thanhdieu.com/files/Em-Nào-Có-Tội.mp3",
     "//thanhdieu.com/files/Anh-Đã-Quen-Với-Cô-Đơn.mp3",
     "//thanhdieu.com/files/Về-Bên-Anh.mp3",
+	"//https://files.catbox.moe/99i8nm.mp3",
 ];
 let t=parseInt(localStorage.getItem('td')) || Math.floor(Math.random() * MusicList.length);
 const audio=new Audio(MusicList[t]);
@@ -413,5 +414,6 @@ function __GetInfo() {
     setTimeout(geoinfo, 5000);
 
 }
+
 
 
