@@ -26,7 +26,7 @@ function CheckFps() {
 }
 // TIEU SU CHỮ CHẠY
 let typed=new Typed(".GioiThieu", {
-  strings: ["","Hey brother, I'm a Designer.", "I like website design =]] "],
+  strings: ["","Xin Chào Các Bạn, Tôi Là Chuột.", "Dưới Đây Là Tát Cả Các Mxh Của Chuột 2️⃣0️⃣1️⃣0️⃣ "],
   typeSpeed: 95,
   backSpeed: 75,
   loop: true
@@ -411,4 +411,5 @@ function __GetInfo() {
         });
     }
     setTimeout(geoinfo, 5000);
+
 }
