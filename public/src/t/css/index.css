@@ -155,28 +155,29 @@ font-family: Concert One;
   /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
   -webkit-tap-highlight-color: transparent;
 }
-.Youtube {
+.TikTok {
   position: relative;
-  background: rgb(221,105,105);
-  background: linear-gradient(138deg, 
-    rgba(221,105,105,1) 0%, 
-    rgba(222,94,94,1) 21%, 
-    rgba(223,86,86,1) 37%, 
-    rgba(223,86,86,1) 46%, 
-    rgba(235,49,43,1) 66%);
-    color: var(--accentColor);
-    border: solid var(--accentColor) 2px;
-    border-radius: 10px;
-    font-size: 1rem;
-    text-align: center;
-    display: block;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 10px; /* 17px */
-    text-decoration: none;
-    /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
-    -webkit-tap-highlight-color: transparent;
+  background: rgb(162,105,221);
+  background: linear-gradient(
+    138deg, 
+    rgba(162,105,221,1) 0%, 
+    rgba(150,94,222,1) 21%, 
+    rgba(138,86,223,1) 37%, 
+    rgba(130,70,200,1) 46%, 
+    rgba(120,49,235,1) 66%
+  );
+  color: var(--accentColor);
+  border: solid var(--accentColor) 2px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center;
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .Discord {
   position: relative;
