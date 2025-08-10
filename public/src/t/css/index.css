@@ -1471,24 +1471,3 @@ article {
             }
   }
 }
-
-@keyframes redGlow {
-    0%, 100% {
-        text-shadow: 0 0 5px #ff0000,
-                     0 0 10px #ff3333,
-                     0 0 20px #ff6666,
-                     0 0 40px #ff9999;
-    }
-    50% {
-        text-shadow: 0 0 2px #ff0000,
-                     0 0 5px #ff3333,
-                     0 0 10px #ff6666,
-                     0 0 20px #ff9999;
-    }
-}
-
-.NameFtJerry {
-    color: red;
-    font-weight: bold;
-    animation: redGlow 1s infinite alternate;
-}
