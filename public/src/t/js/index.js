@@ -88,7 +88,7 @@ function ShowToast() {
 function Alerts() {
   Swal.fire({
     title: '𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 !',
-    text: '=>> 𝘾𝙝𝙖𝙤 𝙈𝙪𝙣𝙜 Đ𝙚𝙣 𝙑𝙤𝙞 𝙏𝙧𝙖𝙣𝙜 𝙒𝙚𝙙 𝘾𝙪𝙖 𝘾𝙝𝙪𝙤𝙩 💘 <<=',
+    text: '=>> 𝘾𝙝𝙖𝙤 𝙈𝙪𝙣𝙜 𝘿𝙚𝙣 𝙑𝙤𝙞 𝙏𝙧𝙖𝙣𝙜 𝙒𝙚𝙙 𝘾𝙪𝙖 𝘾𝙝𝙪𝙤𝙩 💘 <<=',
     showConfirmButton: false
   });
 }
@@ -414,6 +414,7 @@ function __GetInfo() {
     setTimeout(geoinfo, 5000);
 
 }
+
 
 
 
