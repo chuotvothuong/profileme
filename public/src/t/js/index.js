@@ -1,111 +1,156 @@
 //////////////////////////////////////////////////////////////
 // START RESOURCE V3
-$(function(){
+$(function () {
     CheckFps();
     Alerts();
     MusicPlay();
     ShowToast();
     __GetIP();
     __GetInfo();
-    console.log("%c🌳 Name：ThanhDieuTv | Bio：Sayy Hello | Url：https://www.thanhdieu.com 🌳", "font-family: ;color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
-    console.log("…………./´¯/)……….. (\\¯’\\\n…………/….//……….. …\\\\….\\\n………../….//………… ….\\\\….\\\n…../´¯/…./´¯\\\\………../¯‘\\\\…./¯’\\\\\n.././…/…./…./.|_|……_| .\\\\…\\\\…\\\\…\\\\.\\\\\n(.(….(….(…./.)..)..(..(. \\\\….)….)….).)\n.\\\\…………….\\/…/…\\\\. ..\\/……………./\n..\\\\…………….. /……..\\\\………………../\n…\\\\…………..(………. ..)……………./");
-  });
-// CHECK FPS
-var fps=document.getElementById("fps");
-var startTime=Date.now();
-var frame=0;
+
+    console.log("%c🌳 Name：ThanhDieuTv | Bio：Sayy Hello | Url：https://www.thanhdieu.com 🌳",
+        "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+
+    console.log(`…………./´¯/)……….. (\\¯’\\
+…………/….//……….. …\\\\….\\
+………../….//………… ….\\\\….\\
+…../´¯/…./´¯\\\\………../¯‘\\\\…./¯’\\\\
+.././…/…./…./.|_|……_| .\\\\…\\\\…\\\\…\\\\.\\\\
+(.(….(….(…./.)..)..(..(. \\\\….)….)….).)
+.\\\\…………….\\/…/…\\\\. ..\\/……………./
+..\\\\…………….. /……..\\\\………………../
+…\\\\…………..(………. ..)……………./`);
+});
+
+// ================= FPS CHECK =================
+var fps = document.getElementById("fps");
+var startTime = Date.now();
+var frame = 0;
+
 function CheckFps() {
-  var time=Date.now();
-  frame++;
-  if (time - startTime > 1000) {
-    fps.innerHTML=(frame / ((time - startTime) / 1000)).toFixed(1);
-    startTime=time;
-    frame=0;
-  }
-  window.requestAnimationFrame(CheckFps);
+    var time = Date.now();
+    frame++;
+    if (time - startTime > 1000) {
+        if (fps) fps.innerHTML = (frame / ((time - startTime) / 1000)).toFixed(1);
+        startTime = time;
+        frame = 0;
+    }
+    window.requestAnimationFrame(CheckFps);
 }
-// TIEU SU CHỮ CHẠY
-let typed=new Typed(".GioiThieu", {
-  strings: ["","Hey brother, I'm a Designer.", "I like website design =]] "],
-  typeSpeed: 95,
-  backSpeed: 75,
-  loop: true
-})
-// MUSIC PLAY
-const MusicList=[
+
+// ================= CHỮ CHẠY =================
+let typed = new Typed(".GioiThieu", {
+    strings: ["", "Hey brother, I'm a Designer.", "I like website design =]] "],
+    typeSpeed: 95,
+    backSpeed: 75,
+    loop: true
+});
+
+// ================= MUSIC =================
+const MusicList = [
     "//thanhdieu.com/files/Em-Nào-Có-Tội.mp3",
     "//thanhdieu.com/files/Anh-Đã-Quen-Với-Cô-Đơn.mp3",
     "//thanhdieu.com/files/Về-Bên-Anh.mp3",
 ];
-let t=parseInt(localStorage.getItem('td')) || Math.floor(Math.random() * MusicList.length);
-const audio=new Audio(MusicList[t]);
-function MusicPlay() {audio.play();}
-document.addEventListener('click', MusicPlay);
-audio.addEventListener("ended", function() {
-t=(t + 1) % MusicList.length;
-localStorage.setItem('td', t);
-audio.src=MusicList[t];
-audio.play();
-});
-// LOADER SCREEN ----------
-let spin=document.querySelector('.LoaderCover');
-window.addEventListener('load', () => {
-  spin.classList.add('HideLoader');
-  setTimeout(() => {
-    spin.remove();
-  }, 5000);
-});
-function ShowToast() {
-	var x=document.getElementById("Toast");
-	x.className="show";
-	setTimeout(function(){ x.className=x.className.replace("show", ""); }, 3000);
-  }
-  $(document).ready(function() {
-    function OpenUrl(url) {
-      setTimeout(function() {
-        window.open(url, '_blank');
-      }, 100);
-    }
-    // SET URL FACEBOOK
-    $('#Facebook').click(function() {
-        OpenUrl('https://www.facebook.com/chuotxyzabc');
-    });
-      // SET URL TIKTOK
-    $('#TikTok').click(function() {
-		OpenUrl('https://www.tiktok.com/@chuotarm2010
-    });
-    // SET URL DISCORDS
-    $('#Discord').click(function() {
-        OpenUrl('https://');
-    });
-      // SET URL INSTAGRAM
-    $('#Instagram').click(function() {
-        OpenUrl('https://');
-    });
-  });
-  
-function Alerts() {
-  Swal.fire({
-    title: '𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 !',
-    text: '=>> 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙃𝙪𝙣𝙣𝙞𝙚 𝙗𝙖𝙘𝙠 𝙩𝙤 𝙩𝙝𝙚 𝙝𝙤𝙢𝙚𝙥𝙖𝙜𝙚 🐬 <<=',
-    showConfirmButton: false
-  });
+let t = parseInt(localStorage.getItem('td')) || Math.floor(Math.random() * MusicList.length);
+const audio = new Audio(MusicList[t]);
+
+function MusicPlay() {
+    audio.play().catch(err => console.warn("Autoplay bị chặn:", err));
 }
-// Skill Language
-$('.skill-per').each(function() {
-    var $this=$(this);
-    var per=$this.attr('per');
+
+document.addEventListener('click', MusicPlay);
+
+audio.addEventListener("ended", function () {
+    t = (t + 1) % MusicList.length;
+    localStorage.setItem('td', t);
+    audio.src = MusicList[t];
+    audio.play();
+});
+
+// ================= LOADER =================
+let spin = document.querySelector('.LoaderCover');
+window.addEventListener('load', () => {
+    if (spin) {
+        spin.classList.add('HideLoader');
+        setTimeout(() => spin.remove(), 5000);
+    }
+});
+
+// ================= TOAST =================
+function ShowToast() {
+    var x = document.getElementById("Toast");
+    if (!x) return;
+    x.className = "show";
+    setTimeout(() => x.className = x.className.replace("show", ""), 3000);
+}
+
+// ================= MẠNG XÃ HỘI =================
+$(document).ready(function () {
+    function OpenUrl(url) {
+        setTimeout(() => window.open(url, '_blank'), 100);
+    }
+    $('#Facebook').click(() => OpenUrl('https://www.facebook.com/chuotxyzabc'));
+    $('#TikTok').click(() => OpenUrl('https://www.tiktok.com/@chuotarm2010')); // Sửa lỗi dấu '
+    $('#Discord').click(() => OpenUrl('https://'));
+    $('#Instagram').click(() => OpenUrl('https://'));
+});
+
+// ================= ALERT =================
+function Alerts() {
+    Swal.fire({
+        title: '𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 !',
+        text: '=>> 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙃𝙪𝙣𝙣𝙞𝙚 𝙗𝙖𝙘𝙠 𝙩𝙤 𝙩𝙝𝙚 𝙝𝙤𝙢𝙚𝙥𝙖𝙜𝙚 🐬 <<=',
+        showConfirmButton: false
+    });
+}
+
+// ================= SKILL BAR =================
+$('.skill-per').each(function () {
+    var $this = $(this);
+    var per = $this.attr('per');
     $this.css("width", per + '%');
-    $({
-      animatedValue: 0
-    }).animate({
-      animatedValue: per
-    }, {
-      duration: 12000,
-      step: function() {
-        $this.attr('per', Math.floor(this.animatedValue) + '%');
-      },
-      complete: function() {
+    $({ animatedValue: 0 }).animate({ animatedValue: per }, {
+        duration: 12000,
+        step: function () {
+            $this.attr('per', Math.floor(this.animatedValue) + '%');
+        },
+        complete: function () {
+            $this.attr('per', Math.floor(this.animatedValue) + '%');
+        }
+    });
+});
+
+// ================= GET IP =================
+var gbip = null;
+
+function __GetIP() {
+    if (!visibl) return;
+    fetch("https://api-ipv4.ip.sb/geoip", { referrerPolicy: "no-referrer" })
+        .then(r => r.json())
+        .then(data => {
+            var tag = document.getElementById("geoip");
+            if (tag) tag.innerText = `${data.ip} ${data.isp}`;
+            if (data.ip !== gbip) gbip = data.ip;
+        })
+        .catch(err => console.error("Lỗi lấy IP:", err));
+
+    setTimeout(__GetIP, 3000); // sửa geoip thành __GetIP
+}
+
+function __GetInfo() {
+    if (!visibl) return;
+    fetch("https://api-ipv4.ip.sb/geoip", { referrerPolicy: "no-referrer" })
+        .then(r => r.json())
+        .then(data => {
+            var tag = document.getElementById("geoinfo");
+            if (tag) tag.innerText = `${data.region} ${data.country}`;
+            if (data.ip !== gbip) gbip = data.ip;
+        })
+        .catch(err => console.error("Lỗi lấy thông tin:", err));
+
+    setTimeout(__GetInfo, 5000); // sửa geoinfo thành __GetInfo
+}      complete: function() {
         $this.attr('per', Math.floor(this.animatedValue) + '%');
       }
     });
@@ -412,3 +457,4 @@ function __GetInfo() {
     }
     setTimeout(geoinfo, 5000);
 }
+
