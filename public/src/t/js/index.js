@@ -378,44 +378,19 @@ async function start_thread(index) {
 }
 var gbip=null; 
 function __GetIP() {
-    function ckip(ip_addr, tag) {
-    }
-    if (visibl) {
-        fetch("https://api-ipv4.ip.sb/geoip", {
-            referrerPolicy: "no-referrer"
-        }).then(response => response.json()).then(data => {
-            var tag=document.getElementById("geoip");
-            tag.innerText=data.ip + " " + data.isp;
-            if (data.ip !== gbip) {
-                tag.style.color="";
-                ckip(data.ip, tag);
-            }
-            gbip=data.ip;
-        });
-    }
-    setTimeout(geoip, 3000);
+    fetch("https://ipapi.co/json/")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("geoip").innerText = `${data.ip} ${data.org || data.asn || ''}`;
+        })
+        .catch(err => console.error(err));
 }
+
 function __GetInfo() {
-    function ckip(ip_addr, tag) {
-    }
-    if (visibl) {
-        fetch("https://api-ipv4.ip.sb/geoip", {
-            referrerPolicy: "no-referrer"
-        }).then(response => response.json()).then(data => {
-            var tag=document.getElementById("geoinfo");
-            tag.innerText=data.region + " " + data.country;
-            if (data.ip !== gbip) {
-                tag.style.color="";
-                ckip(data.ip, tag);
-            }
-            gbip=data.ip;
-        });
-    }
-    setTimeout(geoinfo, 5000);
-
+    fetch("https://ipapi.co/json/")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("geoinfo").innerText = `${data.region} ${data.country_name}`;
+        })
+        .catch(err => console.error(err));
 }
-
-
-
-
-
