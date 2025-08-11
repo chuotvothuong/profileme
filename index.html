@@ -200,7 +200,25 @@
         });
       });
     </script>
+      <div id="sakura"></div>
+<script>
+  const sakuraContainer = document.getElementById('sakura');
+
+  function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('sakura-petal');
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (Math.random() * 3 + 5) + 's';
+    petal.style.opacity = Math.random();
+    petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+    sakuraContainer.appendChild(petal);
+    setTimeout(() => petal.remove(), 8000);
+  }
+
+  setInterval(createPetal, 300);
+      </script>
   </body>
 </html>
+
 
 
