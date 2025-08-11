@@ -42,7 +42,6 @@
           z-index: 2;
           pointer-events: none;
       }
-
       /* Hiệu ứng đỏ rực nhấp nháy cho tiêu đề */
       .NameFtThanhDieu {
         color: red;
@@ -53,7 +52,6 @@
         0% { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
         100% { color: #ff5555; text-shadow: 0 0 15px #ff0000; }
       }
-
       /* Social container */
       .MangXaHoiFtThanhDieu {
         display: flex;
@@ -79,7 +77,6 @@
       .MangXaHoiFtThanhDieu a:hover {
         transform: scale(1.05);
       }
-
       /* Ripple */
       .ripple {
         position: absolute;
@@ -94,7 +91,6 @@
           opacity: 0;
         }
       }
-
       /* Viền cầu vồng */
       .RainbowBorder {
         border: 3px solid transparent;
@@ -145,7 +141,6 @@
         You Info: <a id="geoip">Loading your address....</a>
       </strong>
       <a id="geoinfo" style="display:block; text-align:center;"></a>
-
       <!-- SOCIAL -->
       <hr class="New">
       <div class="MangXaHoiFtThanhDieu">
@@ -155,9 +150,7 @@
         <a class="RainbowBorder" data-url="https://instagram.com/tenban"><i class="bi bi-instagram"></i> Instagram (0K)</a>
       </div>
       <hr class="New">
-
     </div>
-
     <section id="skills">
       <div class="NameFtJerry container skills">
         <div class="row">
@@ -195,7 +188,6 @@
       </p>
     </footer>
     <div id="Toast">𝘿𝙚𝙨𝙞𝙜𝙣𝙚𝙧 𝙗𝙮 𝙅𝙚𝙧𝙧𝙮 𝙀𝙗𝙖𝙣</div>
-
     <!-- LIBRARY -->
     <script src="./public/src/t/libs/typed.js@2.0.12/typed.js"></script>
     <script src="./public/src/t/libs/sweetalert2@11/sweetalert2.js"></script>
@@ -203,14 +195,12 @@
     <script src="./public/src/t/js/particles.js"></script>
     <script src="./public/src/t/js/app.js"></script>
     <script src="./public/src/t/js/index.js"></script>
-
     <!-- JS Avatar -->
     <script>
       const avatarUrl = "./public/src/t/img/avatar.jpg";
       const randomNumber = Math.floor(Math.random() * 999) + 1;
       document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
     </script>
-
     <!-- JS Ripple + mở link -->
     <script>
       document.querySelectorAll('.MangXaHoiFtThanhDieu a').forEach(btn => {
@@ -225,198 +215,10 @@
           const ripple = btn.getElementsByClassName('ripple')[0];
           if (ripple) ripple.remove();
           btn.appendChild(circle);
-
           const url = btn.getAttribute('data-url');
           if (url) window.open(url, '_blank');
         });
       });
-    
-
-      <!-- SOCIAL -->
-      <ul class="icons">
-        <div class="MangXaHoiFtThanhDieu">
-          <a class="RainbowBorder" data-url="https://facebook.com/tenban"><i class="bi bi-facebook"></i> Facebook (2xx)</a>
-          <a class="RainbowBorder" data-url="https://tiktok.com/@tenban"><i class="bi bi-tiktok"></i> TikTok (1K+)</a>
-          <a class="RainbowBorder" data-url="https://discord.gg/ma-invite"><i class="bi bi-discord"></i> Discord (0K)</a>
-          <a class="RainbowBorder" data-url="https://instagram.com/tenban"><i class="bi bi-instagram"></i> Instagram (0K)</a>
-        </div>
-      </ul>
-
-      <hr class="New">
-    </div>
-
-    <section id="skills">
-      <div class="NameFtJerry container skills">
-        <div class="row">
-          <Skills class="col-12">
-            <u class="NameFtJerry">- Skill Language -<br/></u>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="skill-box">
-          <div class="skill"><div class="skill-name">HTML/CSS</div><div class="skill-bar"><div class="skill-per color1" per="76"></div></div></div>
-          <div class="skill"><div class="skill-name">MySql</div><div class="skill-bar"><div class="skill-per color3" per="9"></div></div></div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="skill-box">
-          <div class="skill"><div class="skill-name">Lua</div><div class="skill-bar"><div class="skill-per color1" per="68"></div></div></div>
-          <div class="skill"><div class="skill-name">PHP</div><div class="skill-bar"><div class="skill-per color2" per="12"></div></div></div>
-        </div>
-    </section>
-    <br/><hr class="New">
-    <u class="NameFtThanhDieu">- About Me -</u><br/><br/>
-    <div class="AboutMe">
-      <article>
-        <p id="ThanhDieuAbout_1" class="BoxAboutMe">Câu Nói Mà Tôi Yêu Thích</p><br/>
-        <p id="ThanhDieuAbout_2" class="BoxAboutMe">Kẻ Mạnh Không Cần Ai Công Nhận, Hắn Chỉ Cần Thế Giới Cúi Đầu.</p>
-      </article>
-    </div>
-    <br/><hr class="New">
-    <footer class="Cuoi Trang">
-      <p class="JerryFtCopyright">
-        <span style="font-family: Monomaniac One;" class="copyright">
-          Created by <a href="https://facebook.com/chuotxyzabc" style="text-decoration: none;"><u style="color: aliceblue;">Jerry ♡</u></a><br>
-          <strong>All rights reserved - © 2025</strong>
-        </span>
-      </p>
-    </footer>
-    <div id="Toast">𝘿𝙚𝙨𝙞𝙜𝙣𝙚𝙧 𝙗𝙮 𝙅𝙚𝙧𝙧𝙮 𝙀𝙗𝙖𝙣</div>
-
-    <!-- LIBRARY -->
-    <script src="./public/src/t/libs/typed.js@2.0.12/typed.js"></script>
-    <script src="./public/src/t/libs/sweetalert2@11/sweetalert2.js"></script>
-    <script src='./public/src/t/libs/jquery-v3.4.1/jquery.min.js'></script>
-    <script src="./public/src/t/js/particles.js"></script>
-    <script src="./public/src/t/js/app.js"></script>
-    <script src="./public/src/t/js/index.js"></script>
-
-    <!-- JS Avatar -->
-    <script>
-      const avatarUrl = "./public/src/t/img/avatar.jpg";
-      const randomNumber = Math.floor(Math.random() * 999) + 1;
-      document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
-    </script>
-
-    <!-- JS Ripple + mở link -->
-    <script>
-      document.querySelectorAll('.MangXaHoiFtThanhDieu a').forEach(btn => {
-        btn.addEventListener('click', e => {
-          const circle = document.createElement('span');
-          const diameter = Math.max(btn.clientWidth, btn.clientHeight);
-          const radius = diameter / 2;
-          circle.style.width = circle.style.height = `${diameter}px`;
-          circle.style.left = `${e.clientX - btn.getBoundingClientRect().left - radius}px`;
-          circle.style.top = `${e.clientY - btn.getBoundingClientRect().top - radius}px`;
-          circle.classList.add('ripple');
-          const ripple = btn.getElementsByClassName('ripple')[0];
-          if (ripple) ripple.remove();
-          btn.appendChild(circle);
-
-          const url = btn.getAttribute('data-url');
-          if (url) window.open(url, '_blank');
-        });
-      });
-    </script>
-  </body>
-</html><a id="geoinfo" style="display:block; text-align:center;"></a>
-      <br/><br/>
-      <hr class="New">
-      <br/>
-      <ul class="icons">
-        <div class="MangXaHoiFtThanhDieu">
-<a id="Facebook" class="RainbowBorder">Facebook (2xx)</a>
-<a id="TikTok" class="RainbowBorder">TikTok (1K+)</a>
-<a id="Discord" class="RainbowBorder">Discord (0K)</a>
-<a id="Instagram" class="RainbowBorder">Instagram (0K)</a>
-      </ul>
-      <hr class="New">
-    </div>
-    <section id="skills">
-      <div class="NameFtJerry container skills">
-        <div class="row">
-          <Skills class="col-12">
-            <u class="NameFtJerry">- Skill Language -<br/></u>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="skill-box">
-          <div class="skill"><div class="skill-name">HTML/CSS</div><div class="skill-bar"><div class="skill-per color1" per="76"></div></div></div>
-          <div class="skill"><div class="skill-name">MySql</div><div class="skill-bar"><div class="skill-per color3" per="9"></div></div></div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="skill-box">
-          <div class="skill"><div class="skill-name">Lua</div><div class="skill-bar"><div class="skill-per color1" per="68"></div></div></div>
-          <div class="skill"><div class="skill-name">PHP</div><div class="skill-bar"><div class="skill-per color2" per="12"></div></div></div>
-        </div>
-    </section>
-    <br/><hr class="New">
-    <u class="NameFtThanhDieu">- About Me -</u><br/><br/>
-    <div class="AboutMe">
-      <article>
-        <p id="ThanhDieuAbout_1" class="BoxAboutMe">Câu Nói Mà Tôi Yêu Thích</p><br/>
-        <p id="ThanhDieuAbout_2" class="BoxAboutMe">Kẻ Mạnh Không Cần Ai Công Nhận, Hắn Chỉ Cần Thế Giới Cúi Đầu.</p>
-      </article>
-    </div>
-    <br/><hr class="New">
-    <footer class="Cuoi Trang">
-      <p class="JerryFtCopyright">
-        <span style="font-family: Monomaniac One;" class="copyright">
-          Created by <a href="https://facebook.com/chuotxyzabc" style="text-decoration: none;"><u style="color: aliceblue;">Jerry ♡</u></a><br>
-          <strong>All rights reserved - © 2025</strong>
-        </span>
-      </p>
-    </footer>
-    <div id="Toast">𝘿𝙚𝙨𝙞𝙜𝙣𝙚𝙧 𝙗𝙮 𝙅𝙚𝙧𝙧𝙮 𝙀𝙗𝙖𝙣</div>
-    <!-- LIBRARY -->
-    <script src="./public/src/t/libs/typed.js@2.0.12/typed.js"></script>
-    <script src="./public/src/t/libs/sweetalert2@11/sweetalert2.js"></script>
-    <script src='./public/src/t/libs/jquery-v3.4.1/jquery.min.js'></script>
-    <!-- DATA JS -->
-    <script src="./public/src/t/js/particles.js"></script>
-    <script src="./public/src/t/js/app.js"></script>
-    <script src="./public/src/t/js/index.js"></script>
-
-    <!-- JS Avatar -->
-    <script>
-      const avatarUrl = "./public/src/t/img/avatar.jpg";
-      const randomNumber = Math.floor(Math.random() * 999) + 1;
-      document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
-    </script>
-
-    <!-- JS Ripple -->
-    <script>
-    document.querySelectorAll('.MangXaHoiFtJerry a div').forEach(button => {
-      button.addEventListener('click', function(e) {
-        const circle = document.createElement('span');
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${e.clientX - button.getBoundingClientRect().left - radius}px`;
-        circle.style.top = `${e.clientY - button.getBoundingClientRect().top - radius}px`;
-        circle.classList.add('ripple');
-
-        const ripple = button.getElementsByClassName('ripple')[0];
-        if (ripple) {
-          ripple.remove();
-        }
-
-        button.appendChild(circle);
-      });
-    });
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
