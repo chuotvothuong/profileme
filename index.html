@@ -43,18 +43,33 @@
           pointer-events: none;
       }
 
+      /* Hiệu ứng đỏ rực nhấp nháy cho tiêu đề */
+      .NameFtThanhDieu {
+        color: red;
+        font-weight: bold;
+        animation: flashRed 1s infinite alternate;
+      }
+      @keyframes flashRed {
+        0% { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
+        100% { color: #ff5555; text-shadow: 0 0 15px #ff0000; }
+      }
+
       /* Ripple Effect cho nút mạng xã hội */
-      .MangXaHoiFtJerry a div {
-        position: relative;
-        display: inline-block;
+      .MangXaHoiFtThanhDieu a {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
         padding: 8px 12px;
-        border-radius: 6px;
+        border-radius: 8px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
         cursor: pointer;
         overflow: hidden;
-        transition: background-color 0.3s ease;
+        transition: transform 0.2s ease;
       }
-      .MangXaHoiFtJerry a div:hover {
-        background-color: rgba(255,255,255,0.1);
+      .MangXaHoiFtThanhDieu a:hover {
+        transform: scale(1.05);
       }
       .ripple {
         position: absolute;
@@ -68,6 +83,22 @@
           transform: scale(4);
           opacity: 0;
         }
+      }
+
+      /* Viền cầu vồng */
+      .RainbowBorder {
+        position: relative;
+        border: 3px solid transparent;
+        border-radius: 8px;
+        background-image: linear-gradient(black, black),
+          linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        animation: rainbowMove 3s linear infinite;
+      }
+      @keyframes rainbowMove {
+        0% { background-position: 0 0; }
+        100% { background-position: 300% 0; }
       }
     </style>
   </head>
@@ -102,9 +133,101 @@
       <h2 class="TieuSu GioiThieu">Hi my name is Jerry<span class="typed-cursor" aria-hidden="true"></span></h2>
       <br/>
       <strong style="display:block; text-align:center; color: rgb(255, 238, 0); font-size: 16px; font-family: 'Rowdies';">
-    You Info: <a id="geoip">Loading your address....</a>
-</strong>
-<a id="geoinfo" style="display:block; text-align:center;"></a>
+        You Info: <a id="geoip">Loading your address....</a>
+      </strong>
+      <a id="geoinfo" style="display:block; text-align:center;"></a>
+      <br/><br/>
+      <hr class="New">
+      <br/>
+
+      <!-- SOCIAL -->
+      <ul class="icons">
+        <div class="MangXaHoiFtThanhDieu">
+          <a class="RainbowBorder" data-url="https://facebook.com/tenban"><i class="bi bi-facebook"></i> Facebook (2xx)</a>
+          <a class="RainbowBorder" data-url="https://tiktok.com/@tenban"><i class="bi bi-tiktok"></i> TikTok (1K+)</a>
+          <a class="RainbowBorder" data-url="https://discord.gg/ma-invite"><i class="bi bi-discord"></i> Discord (0K)</a>
+          <a class="RainbowBorder" data-url="https://instagram.com/tenban"><i class="bi bi-instagram"></i> Instagram (0K)</a>
+        </div>
+      </ul>
+
+      <hr class="New">
+    </div>
+
+    <section id="skills">
+      <div class="NameFtJerry container skills">
+        <div class="row">
+          <Skills class="col-12">
+            <u class="NameFtJerry">- Skill Language -<br/></u>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="skill-box">
+          <div class="skill"><div class="skill-name">HTML/CSS</div><div class="skill-bar"><div class="skill-per color1" per="76"></div></div></div>
+          <div class="skill"><div class="skill-name">MySql</div><div class="skill-bar"><div class="skill-per color3" per="9"></div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="skill-box">
+          <div class="skill"><div class="skill-name">Lua</div><div class="skill-bar"><div class="skill-per color1" per="68"></div></div></div>
+          <div class="skill"><div class="skill-name">PHP</div><div class="skill-bar"><div class="skill-per color2" per="12"></div></div></div>
+        </div>
+    </section>
+    <br/><hr class="New">
+    <u class="NameFtThanhDieu">- About Me -</u><br/><br/>
+    <div class="AboutMe">
+      <article>
+        <p id="ThanhDieuAbout_1" class="BoxAboutMe">Câu Nói Mà Tôi Yêu Thích</p><br/>
+        <p id="ThanhDieuAbout_2" class="BoxAboutMe">Kẻ Mạnh Không Cần Ai Công Nhận, Hắn Chỉ Cần Thế Giới Cúi Đầu.</p>
+      </article>
+    </div>
+    <br/><hr class="New">
+    <footer class="Cuoi Trang">
+      <p class="JerryFtCopyright">
+        <span style="font-family: Monomaniac One;" class="copyright">
+          Created by <a href="https://facebook.com/chuotxyzabc" style="text-decoration: none;"><u style="color: aliceblue;">Jerry ♡</u></a><br>
+          <strong>All rights reserved - © 2025</strong>
+        </span>
+      </p>
+    </footer>
+    <div id="Toast">𝘿𝙚𝙨𝙞𝙜𝙣𝙚𝙧 𝙗𝙮 𝙅𝙚𝙧𝙧𝙮 𝙀𝙗𝙖𝙣</div>
+
+    <!-- LIBRARY -->
+    <script src="./public/src/t/libs/typed.js@2.0.12/typed.js"></script>
+    <script src="./public/src/t/libs/sweetalert2@11/sweetalert2.js"></script>
+    <script src='./public/src/t/libs/jquery-v3.4.1/jquery.min.js'></script>
+    <script src="./public/src/t/js/particles.js"></script>
+    <script src="./public/src/t/js/app.js"></script>
+    <script src="./public/src/t/js/index.js"></script>
+
+    <!-- JS Avatar -->
+    <script>
+      const avatarUrl = "./public/src/t/img/avatar.jpg";
+      const randomNumber = Math.floor(Math.random() * 999) + 1;
+      document.getElementById("avatar-img").src = `${avatarUrl}?v=${randomNumber}`;
+    </script>
+
+    <!-- JS Ripple + mở link -->
+    <script>
+      document.querySelectorAll('.MangXaHoiFtThanhDieu a').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const circle = document.createElement('span');
+          const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+          const radius = diameter / 2;
+          circle.style.width = circle.style.height = `${diameter}px`;
+          circle.style.left = `${e.clientX - btn.getBoundingClientRect().left - radius}px`;
+          circle.style.top = `${e.clientY - btn.getBoundingClientRect().top - radius}px`;
+          circle.classList.add('ripple');
+          const ripple = btn.getElementsByClassName('ripple')[0];
+          if (ripple) ripple.remove();
+          btn.appendChild(circle);
+
+          const url = btn.getAttribute('data-url');
+          if (url) window.open(url, '_blank');
+        });
+      });
+    </script>
+  </body>
+</html><a id="geoinfo" style="display:block; text-align:center;"></a>
       <br/><br/>
       <hr class="New">
       <br/>
@@ -194,6 +317,7 @@
     </script>
   </body>
 </html>
+
 
 
 
