@@ -5,11 +5,9 @@ $(function(){
     Alerts();
     MusicPlay();
     ShowToast();
-    __GetIP();
-    __GetInfo();
     console.log("%c🌳 Name：Jerry | Bio：Sayy Hello | Url：https://www.thanhdieu.com 🌳", "font-family: ;color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
     console.log("…………./´¯/)……….. (\\¯’\\\n…………/….//……….. …\\\\….\\\n………../….//………… ….\\\\….\\\n…../´¯/…./´¯\\\\………../¯‘\\\\…./¯’\\\\\n.././…/…./…./.|_|……_| .\\\\…\\\\…\\\\…\\\\.\\\\\n(.(….(….(…./.)..)..(..(. \\\\….)….)….).)\n.\\\\…………….\\/…/…\\\\. ..\\/……………./\n..\\\\…………….. /……..\\\\………………../\n…\\\\…………..(………. ..)……………./");
-  });
+});
 // CHECK FPS
 var fps=document.getElementById("fps");
 var startTime=Date.now();
@@ -60,31 +58,26 @@ function ShowToast() {
 	var x=document.getElementById("Toast");
 	x.className="show";
 	setTimeout(function(){ x.className=x.className.replace("show", ""); }, 3000);
-  }
-  $(document).ready(function() {
+}
+$(document).ready(function() {
     function OpenUrl(url) {
       setTimeout(function() {
         window.open(url, '_blank');
       }, 100);
     }
-    // SET URL FACEBOOK
     $('#Facebook').click(function() {
         OpenUrl('https://www.facebook.com/chuotxyzabc');
     });
-      // SET URL TikTok
     $('#TikTok').click(function() {
         OpenUrl('https://www.tiktok.com/@chuotarm2010');
     });
-    // SET URL DISCORDS
     $('#Discord').click(function() {
         OpenUrl('https://');
     });
-      // SET URL INSTAGRAM
     $('#Instagram').click(function() {
         OpenUrl('https://');
     });
-  });
-  
+});
 function Alerts() {
   Swal.fire({
     title: '𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 !',
@@ -97,11 +90,7 @@ $('.skill-per').each(function() {
     var $this=$(this);
     var per=$this.attr('per');
     $this.css("width", per + '%');
-    $({
-      animatedValue: 0
-    }).animate({
-      animatedValue: per
-    }, {
+    $({ animatedValue: 0 }).animate({ animatedValue: per }, {
       duration: 12000,
       step: function() {
         $this.attr('per', Math.floor(this.animatedValue) + '%');
@@ -110,287 +99,31 @@ $('.skill-per').each(function() {
         $this.attr('per', Math.floor(this.animatedValue) + '%');
       }
     });
-  });
-var maxtheard;
-var testurl;
-var lsat_date=0;
-var CountryCode_ThanhDieu={
-    US: "United States",
-    CA: "California",
-    HK: "HongKong (Trung Quốc)",
-    TW: "Taiwan (Đài Loan)",
-    SG: "Singapore",
-    JP: "Japan",
-    KR: "Korea",
-    AU: "Australia",
-    NZ: "New Zealand",
-    AF: "Afghanistan",
-    AL: "Albania",
-    DZ: "Algeria",
-    AS: "American Samoa (United States)",
-    AD: "Andorra",
-    AO: "Angola",
-    AI: "Anguilla",
-    AG: "Antigua and Barbuda",
-    AR: "Argentina",
-    AM: "Armenia",
-    AW: "Aruba",
-    AT: "Austria",
-    AZ: "Azerbaijan",
-    BS: "Bahamas",
-    BH: "Bahrain",
-    BD: "Bangladesh",
-    BB: "Barbados",
-    BY: "Belarus",
-    BE: "Belgium",
-    BZ: "Belize",
-    BJ: "Benin",
-    BM: "Bermuda",
-    BT: "Bhutan",
-    BO: "Bolivia",
-    BA: "Bosnia and Herzegovina",
-    BW: "Botswana",
-    BR: "Brazil",
-    VG: "British Virgin Islands (United Kingdom)",
-    BN: "Brunei",
-    BG: "Bulgaria",
-    BF: "Burkina Faso",
-    BI: "Burundi",
-    KH: "Cambodia",
-    CM: "Cameroon",
-    CV: "Cape Verde",
-    KY: "Cayman Islands (United Kingdom)",
-    CF: "Central African Republic",
-    TD: "Chad",
-    CL: "Chile",
-    CO: "Colombia",
-    KM: "Comoros",
-    CD: "Congo (Kinshasa)",
-    CK: "Cook Islands (New Zealand)",
-    CR: "Costa Rica",
-    CI: "Ivory Coast",
-    HR: "Croatia",
-    CU: "Cuba",
-    CY: "Cyprus",
-    CZ: "Czech Republic",
-    DK: "Denmark",
-    DJ: "Djibouti",
-    DM: "Dominique",
-    DO: "Dominican Republic",
-    EC: "Ecuador",
-    EG: "Egypt",
-    SV: "El Salvador",
-    GQ: "Equatorial Guinea",
-    ER: "Eritrea",
-    EE: "Estonia",
-    ET: "Ethiopia",
-    FO: "Faroe Islands (Denmark)",
-    FJ: "Fiji",
-    FI: "Finland",
-    FR: "France",
-    GF: "French Guiana (France)",
-    PF: "French Polynesia",
-    GA: "Gabon",
-    GM: "Gambia",
-    GE: "Georgia",
-    DE: "Germany",
-    GH: "Ghana",
-    GI: "Gibraltar (United Kingdom)",
-    GR: "Greece",
-    GL: "Greenland",
-    GD: "Grenada",
-    GP: "Guadeloupe",
-    GU: "Guam (United States)",
-    GT: "Guatemala",
-    GN: "Guinea",
-    GW: "Guinea-Bissau",
-    GY: "Guyana",
-    HT: "Haiti",
-    HN: "Honduras",
-    HU: "Hungary",
-    IS: "Iceland",
-    IN: "India",
-    ID: "Indonesia",
-    IR: "Iran",
-    IQ: "Iraq",
-    IE: "Republic of Ireland",
-    IL: "Israel",
-    IT: "Italy",
-    JM: "Jamaica",
-    JO: "Jordan",
-    KZ: "Kazakhstan",
-    KE: "Kenya",
-    KI: "Kiribati",
-    KP: "North Korea",
-    KW: "Kuwait",
-    KG: "Kyrgyzstan",
-    LA: "Laos",
-    LV: "Latvia",
-    LB: "Lebanon",
-    LS: "Lesotho",
-    LR: "Liberia",
-    LY: "Libya",
-    LI: "Liechtenstein",
-    LT: "Lithuania",
-    LU: "Luxembourg",
-    MO: "Macao (China)",
-    MK: "Macedonia",
-    MG: "Madagascar",
-    MW: "Malawi",
-    MY: "Malaysia",
-    MV: "Maldives",
-    ML: "Republic of Mali",
-    MT: "Malta",
-    MH: "Marshall Islands",
-    MQ: "Martinique (France)",
-    MR: "Mauritania",
-    MU: "Mauritius",
-    YT: "Mayotte",
-    MX: "Mexico",
-    FM: "Federated States of Micronesia",
-    MD: "Moldova",
-    MC: "Monaco",
-    MN: "Mongolia",
-    ME: "Montenegro",
-    MS: "Montserrat (UK)",
-    MA: "Morocco",
-    MZ: "Mozambique",
-    MM: "Myanmar",
-    NA: "Namibia",
-    NR: "Nauru",
-    NP: "Nepal",
-    NL: "Netherlands",
-    NC: "New Caledonia (France)",
-    NI: "Nicaragua",
-    NE: "Niger",
-    NG: "Nigeria",
-    NU: "Niue",
-    MP: "Northern Mariana Islands (USA)",
-    NO: "Norway",
-    OM: "Oman",
-    PK: "Pakistan",
-    PW: "Palau",
-    PS: "Palestine",
-    PA: "Panama",
-    PG: "Papua New Guinea",
-    PY: "Paraguay",
-    CN: "China",
-    PE: "Peru",
-    PH: "Philippines",
-    PL: "Poland",
-    PT: "Portugal",
-    PR: "Puerto Rico (United States)",
-    QA: "Qatar",
-    CG: "Republic of the Congo",
-    ZW: "Zimbabwe",
-    RE: "Reunion (France)",
-    RO: "Romania",
-    RU: "Russia",
-    RW: "Rwanda",
-    SH: "Saint Helena",
-    KN: "Saint Kitts and Nevis",
-    LC: "Saint Lucia",
-    PM: "Saint Pierre and Miquelon (France)",
-    VC: "Saint Vincent and the Grenadines",
-    WS: "Samoa",
-    SM: "San Marino",
-    ST: "Sao Tome and Principe",
-    SA: "Saudi Arabia",
-    SN: "Senegal",
-    RS: "Republic of Serbia",
-    SC: "Seychelles",
-    SL: "Sierra Leone",
-    SK: "Slovakia",
-    SI: "Slovenia",
-    SB: "Solomon Islands",
-    SO: "Somalia",
-    ZA: "South Africa",
-    SS: "South Sudan",
-    ES: "Spain",
-    LK: "Sri Lanka",
-    SD: "Sudan",
-    SR: "Suriname",
-    SZ: "Swaziland",
-    SE: "Sweden",
-    CH: "Switzerland",
-    SY: "Syria",
-    TJ: "Tajikistan",
-    TZ: "Tanzania",
-    TH: "Thailand",
-    TL: "East Timor",
-    TG: "Togo",
-    TK: "Tokelau",
-    TO: "Tonga",
-    TT: "Trinidad and Tobago",
-    TN: "Tunisia",
-    TR: "Türkiye",
-    TM: "Turkmenistan",
-    TC: "Turks and Caicos Islands (United Kingdom)",
-    TV: "Tuvalu",
-    UG: "Uganda",
-    UA: "Ukraine",
-    AE: "United Arab Emirates",
-    GB: "United Kingdom",
-    UY: "Uruguay",
-    UZ: "Uzbekistan",
-    VU: "Vanuatu",
-    VE: "Venezuela",
-    VN: "Vietnam",
-    WF: "Wallis and Futuna (France)",
-    YE: "Yemen",
-    ZM: "Zambia"
-};
-var all_down_sum=0;
-var run=false;
-var checkIP=false;
-var visibl=true;
-var thread_down=[];
-var lsat_all_down=0;
-var refresh_lay=5e3;
-async function start_thread(index) {
-    try {
-        const response=await fetch(testurl, {
-            cache: "no-store",
-            mode: "cors",
-            referrerPolicy: "no-referrer"
-        });
-        const reader=response.body.getReader();
-        while (true) {
-            const {
-                value,
-                done
-            }=await reader.read();
-            if (done) {
-                reader.cancel();
-                start_thread(index);
-                break;
-            }
-            if (!run) {
-                reader.cancel();
-                break;
-            }
-            thread_down[index] += value.length;
-        }
-    } catch (err) {
-        console.log(err);
-        if (run) start_thread(index);
-    }
-}
-var gbip=null; 
-function __GetIP() {
-    fetch("https://ipapi.co/json/")
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("geoip").innerText = `${data.ip} ${data.org || data.asn || ''}`;
-        })
-        .catch(err => console.error(err));
-}
+});
 
-function __GetInfo() {
-    fetch("https://ipapi.co/json/")
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("geoinfo").innerText = `${data.region} ${data.country_name}`;
-        })
-        .catch(err => console.error(err));
-}
+document.addEventListener("DOMContentLoaded", function () {
+
+    function __GetIP() {
+        fetch("https://ipapi.co/json/?v=" + Math.random())
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("geoip").innerText =
+                    `${data.ip} ${data.org || data.asn || ''}`;
+            })
+            .catch(err => console.error("IP API error:", err));
+    }
+
+    function __GetInfo() {
+        fetch("https://ipapi.co/json/?v=" + Math.random())
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("geoinfo").innerText =
+                    `${data.region} ${data.country_name}`;
+            })
+            .catch(err => console.error("Info API error:", err));
+    }
+
+    __GetIP();
+    __GetInfo();
+
+});
