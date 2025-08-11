@@ -1,3 +1,5 @@
+var visibl = true;
+
 //////////////////////////////////////////////////////////////
 // START RESOURCE V3
 $(function () {
@@ -91,7 +93,7 @@ $(document).ready(function () {
         setTimeout(() => window.open(url, '_blank'), 100);
     }
     $('#Facebook').click(() => OpenUrl('https://www.facebook.com/chuotxyzabc'));
-    $('#TikTok').click(() => OpenUrl('https://www.tiktok.com/@chuotarm2010')); // Sửa lỗi dấu '
+    $('#TikTok').click(() => OpenUrl('https://www.tiktok.com/@chuotarm2010'));
     $('#Discord').click(() => OpenUrl('https://'));
     $('#Instagram').click(() => OpenUrl('https://'));
 });
@@ -105,6 +107,52 @@ function Alerts() {
     });
 }
 
+// ================= SKILL BAR =================
+$('.skill-per').each(function () {
+    var $this = $(this);
+    var per = $this.attr('per');
+    $this.css("width", per + '%');
+    $({ animatedValue: 0 }).animate({ animatedValue: per }, {
+        duration: 12000,
+        step: function () {
+            $this.attr('per', Math.floor(this.animatedValue) + '%');
+        },
+        complete: function () {
+            $this.attr('per', Math.floor(this.animatedValue) + '%');
+        }
+    });
+});
+
+// ================= GET IP =================
+var gbip = null;
+
+function __GetIP() {
+    if (!visibl) return;
+    fetch("https://api-ipv4.ip.sb/geoip", { referrerPolicy: "no-referrer" })
+        .then(r => r.json())
+        .then(data => {
+            var tag = document.getElementById("geoip");
+            if (tag) tag.innerText = `${data.ip} ${data.isp}`;
+            if (data.ip !== gbip) gbip = data.ip;
+        })
+        .catch(err => console.error("Lỗi lấy IP:", err));
+
+    setTimeout(__GetIP, 3000);
+}
+
+function __GetInfo() {
+    if (!visibl) return;
+    fetch("https://api-ipv4.ip.sb/geoip", { referrerPolicy: "no-referrer" })
+        .then(r => r.json())
+        .then(data => {
+            var tag = document.getElementById("geoinfo");
+            if (tag) tag.innerText = `${data.region} ${data.country}`;
+            if (data.ip !== gbip) gbip = data.ip;
+        })
+        .catch(err => console.error("Lỗi lấy thông tin:", err));
+
+    setTimeout(__GetInfo, 5000);
+}
 // ================= SKILL BAR =================
 $('.skill-per').each(function () {
     var $this = $(this);
@@ -457,4 +505,5 @@ function __GetInfo() {
     }
     setTimeout(geoinfo, 5000);
 }
+
 
