@@ -96,101 +96,43 @@ hr.ThanhGachNgang {
   margin: 0 20px;
 }
 
-/* LAYOUT */
-.MangXaHoiFtThanhDieu {
+/* ========================= */
+/* SOCIAL LINKS (ĐÃ GỘP)     */
+/* ========================= */
+.social-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
   margin: 10px auto;
 }
 
-.MangXaHoiFtThanhDieu div {
-  border: 2px solid white;
-  font-family: Righteous;
-  border-radius: 5px;
-  color: white;
-  padding: 10px 24px;
-  cursor: pointer;
-  transition: 0.5s;
+.social-links a {
+  flex: 1 1 150px; /* tự giãn nhưng tối thiểu 150px */
+  max-width: 200px; /* không quá rộng */
   text-align: center;
-  text-shadow: -1px 0 5px cyan, 0 1px 5px red, 1px 0 5px cyan, 0 -1px 5px red;
-}
-
-/* Buttons */
-.Facebook, .TikTok, .Discord, .Instagram {
-  position: relative;
-  color: var(--accentColor);
-  border: solid var(--accentColor) 2px;
-  border-radius: 10px;
-  font-size: 1rem;
-  text-align: center;
-  display: block;
-  margin: 0 10px 10px;
   padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
   text-decoration: none;
+  color: var(--accentColor);
+  border-radius: 10px;
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Nền riêng từng mạng xã hội */
 .Facebook { background: linear-gradient(139deg, #4959ff 50%, rgba(0,198,255,0.84) 100%); }
 .TikTok { background: linear-gradient(138deg, #a269dd 0%, #785eeb 66%); }
 .Discord { background: linear-gradient(139deg, #5865f2 41%, #9864f1 85%); }
 .Instagram { background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); }
 
-/* Cards */
-.thongtinthanhtoanv2s {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.thongtinthanhtoanv2 {
-  background-color: #050303;
-  margin: 20px;
-  padding: 20px;
-  width: 350px;
-  height: 210px;
-  display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
-  border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
-  transition: all 0.2s;
-}
-
-.thongtinthanhtoanv2:hover {
-  box-shadow: -1px 0 10px cyan, 0 1px 5px red, 1px 0 10px cyan, 0 -1px 10px red;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .MangXaHoiFtThanhDieu div { width: 65%; }
-  .BoxAboutMe { width: 100%; }
-}
-
-@media (min-width: 769px) {
-  .MangXaHoiFtThanhDieu div { width: 30%; }
-  .BoxAboutMe { width: 43%; }
-}
-
-/* Utility classes */
-.BlurWebs { animation: blur 5s linear forwards; }
-.italic { font-style: italic; }
-.Today {
-  font-size: 16px;
-  font-family: 'Rowdies';
-  animation: colorRotate 2.5s linear infinite;
-}
-
-/* ========================= */
-/* HIỆU ỨNG VIỀN 7 MÀU CHẠY */
-/* ========================= */
+/* Rainbow Border Effect */
 .RainbowBorder {
   position: relative;
   border: 2px solid transparent;
   border-radius: 10px;
   z-index: 0;
 }
-
 .RainbowBorder::before {
   content: '';
   position: absolute;
@@ -204,9 +146,27 @@ hr.ThanhGachNgang {
   z-index: -1;
   animation: borderMove 5s linear infinite;
 }
-
 @keyframes borderMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-         } 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .social-links a { flex: 1 1 45%; }
+  .BoxAboutMe { width: 100%; }
+}
+@media (min-width: 769px) {
+  .social-links a { flex: 1 1 150px; }
+  .BoxAboutMe { width: 43%; }
+}
+
+/* Utility */
+.BlurWebs { animation: blur 5s linear forwards; }
+.italic { font-style: italic; }
+.Today {
+  font-size: 16px;
+  font-family: 'Rowdies';
+  animation: colorRotate 2.5s linear infinite;
+}
