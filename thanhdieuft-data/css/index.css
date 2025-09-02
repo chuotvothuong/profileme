@@ -1129,3 +1129,9 @@ SKILLS START
   margin-right: auto;
   transition: transform 250ms;
 }
+.Credit_Source {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+}
