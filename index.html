@@ -136,11 +136,45 @@
   </div>
 
   <div style="text-align:center; margin-top:20px;">
-    <img src="https://i.imgur.com/sLMsiEo.jpeg" 
-         alt="QR Code" width="200" height="200" 
-         style="border-radius:10px; box-shadow:0 0 10px cyan;">
+    <div class="qr-wrapper">
+      <img src="https://i.imgur.com/sLMsiEo.jpeg" 
+           alt="QR Code" width="200" height="200" 
+           class="qr-img">
+    </div>
   </div>
-    </section>
+</section>
+
+<style>
+.qr-wrapper {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 12px;
+  background: linear-gradient(270deg, red, orange, yellow, lime, cyan, magenta, red);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: borderGradient 6s linear infinite;
+}
+
+.qr-img {
+  border-radius: 10px;
+  display: block;
+}
+
+@keyframes borderGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>
     <br/>
     <br/>
     <br/>
@@ -194,6 +228,7 @@ function Zalo() {
     <script src="./thanhdieuft-data/js/index.js"></script>
   </body>
 </html>
+
 
 
 
