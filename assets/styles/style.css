@@ -2723,3 +2723,10 @@ i.fas.fa-check {
 .snowflake img {
   height: 30px;
 }
+.qr-img {
+  width: 100%;
+  max-width: 300px; /* to trên PC nhưng vẫn vừa trên mobile */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
