@@ -2730,3 +2730,48 @@ i.fas.fa-check {
   display: block;
   margin: 0 auto;
 }
+/* Class chung cho viền cầu vồng */
+.rainbow-border {
+  position: relative;
+  border-radius: 50%; /* bo tròn cho avatar, với ảnh vuông thì bỏ dòng này */
+  display: inline-block;
+  padding: 4px; /* độ dày viền */
+  overflow: hidden;
+}
+
+.rainbow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 4px;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 400%;
+  animation: rainbow 8s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Ảnh bên trong */
+.rainbow-border img {
+  display: block;
+  border-radius: inherit;
+}
